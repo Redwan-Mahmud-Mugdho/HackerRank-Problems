@@ -1,0 +1,39 @@
+"""
+Problem link:
+https://www.hackerrank.com/challenges/grading/problem
+"""
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'gradingStudents' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY grades as parameter.
+#
+
+def gradingStudents(grades):
+    # Solution Starts here
+    b= 0
+    a =0
+    c=[]
+    for i in grades:
+        if i >= 38:
+            b=i//5
+            if ((b+1)*5)-i<3:
+                c.append((b+1)*5)
+                
+            else:
+                c.append(i)
+        else:
+            c.append(i)
+    return c
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    grades_count = int(input().strip())
